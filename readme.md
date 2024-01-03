@@ -59,6 +59,14 @@ terraform init
 4. execute below command to import existing aws object into terraform by generating config file
 terraform plan -generate-config-out=<resource_file_name.tf>
 terraform plan -generate-config-out=main_resource.tf
+
+5. above command will not import existing resource(not create state file) rather it generates the config file.
+
+6. execute below command to import existing resource
+terraform import aws_instance.name <existing _aws_instance_id>
+terraform import aws_instance.web i-0a4bdd3f04077a85d
+
+7. you can replace main.tff config file with generated config file and try terraform plan which will not show any update. 
 ```
 
 
